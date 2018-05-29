@@ -11,4 +11,4 @@ script:
   - mvn integration-test
 
 after_script:
-  - hiptest-publisher -c jbehave.conf --token=$SECRET_TOKEN --push=target/jbehave/view/surefire-report.xml --test-run-id=162509
+  - hiptest-publisher -c jbehave.conf --token=$SECRET_TOKEN --push="target/jbehave/view/surefire-report*.xml" --test-run-id=162509

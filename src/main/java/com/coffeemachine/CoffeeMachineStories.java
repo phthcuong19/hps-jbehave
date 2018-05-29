@@ -29,13 +29,14 @@ public class CoffeeMachineStories extends JUnitStories {
     @Override
     public Configuration configuration() {
         Class<? extends Embeddable> embeddableClass = this.getClass();
-        Options options = new Options("surefire-report", new CustomNamingStrategy(), false, false);
+        Options options = new Options("surefire-report", new CustomNamingStrategy(), true, true);
         SurefireReporter surefireReporter = new SurefireReporter(embeddableClass, options);
 
         return new MostUsefulConfiguration().useStoryLoader(new LoadFromClasspath(embeddableClass))
                 .useStoryReporterBuilder(
                         new StoryReporterBuilder()
-                                .withSurefireReporter(surefireReporter));
+                            .withDefaultFormats().withFormats(CONSOLE, HTML)
+                            .withSurefireReporter(surefireReporter));
     }
 
     @Override
