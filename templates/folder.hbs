@@ -1,0 +1,15 @@
+{{#if rendered_children.ancestor_tags}}{{#each rendered_children.ancestor_tags}}{{this}} {{/each}}{{#unless has_tags?}}
+{{/unless}}{{/if}}{{#if has_tags?}}{{join rendered_children.tags ' '}}
+{{/if}}{{{ rendered_children.name }}}
+{{#if rendered_children.description}}
+Narrative:
+{{rendered_children.description}}{{/if}}
+
+Lifecycle:
+Before:
+Scope: SCENARIO
+Given actionwords are initialized
+{{#each rendered_children.body}}{{{ this }}}
+{{/each}}
+
+{{#each rendered_children.scenarios}}{{{this}}}{{/each}}

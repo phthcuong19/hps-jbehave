@@ -1,5 +1,9 @@
 package com.coffeemachine;
 
+import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
+
 import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertFalse;
 import static junit.framework.Assert.assertTrue;
@@ -27,7 +31,7 @@ public class Actionwords {
     }
 
     public void messageMessageShouldBeDisplayed(String message) {
-        assertEquals(sut.message(), message);
+        assertEquals(message, sut.message());
     }
 
     public void coffeeShouldBeServed() {
@@ -121,7 +125,7 @@ public class Actionwords {
     }
 
     public void displayedMessageIs(String freeText) {
-        messageMessageShouldBeDisplayed(freeText);
+        assertEquals(sut.message().replaceAll("\\s+", " ").trim(), freeText.replaceAll("\\s+", " ").trim());
     }
 
     public void iSwitchToSettingsMode() {
@@ -129,14 +133,13 @@ public class Actionwords {
     }
 
     public void settingsShouldBe(ExamplesTable datatable) {
-        // List<List<String>> rawTable = datatable.raw();
-        // Map<String,String> settings = new HashMap<String, String>();
+        Map<String,String> settings = new HashMap<String, String>();
 
-        // settings.put(rawTable.get(0).get(0), rawTable.get(0).get(1));
-        // settings.put(rawTable.get(1).get(0), rawTable.get(1).get(1));
+        for (Map<String,String> row : datatable.getRows()) {
+           settings.put(row.get("name"), row.get("value"));
+        }
 
-
-        // assertEquals(settings, sut.getSettings());
+        assertEquals(settings, sut.getSettings());
     }
 
 }

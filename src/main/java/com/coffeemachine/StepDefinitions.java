@@ -4,7 +4,12 @@ import org.jbehave.core.annotations.*;
 import org.jbehave.core.model.ExamplesTable;
 
 public class StepDefinitions {
-    public Actionwords actionwords = new Actionwords();
+    public Actionwords actionwords;
+
+    @Given("actionwords are initialized")
+    public void beforeEachScenario() {
+        actionwords = new Actionwords();
+    }
 
     @When("I start the coffee machine using language \"$lang\"")
     public void iStartTheCoffeeMachineUsingLanguageLang(String lang) {
@@ -91,7 +96,7 @@ public class StepDefinitions {
         actionwords.iHandleEverythingExceptTheGrounds();
     }
 
-    @Then("displayed message is:")
+    @Then("displayed message is: \"\"\"$freeText\"\"\"")
     public void displayedMessageIs(String freeText) {
         actionwords.displayedMessageIs(freeText);
     }
@@ -101,7 +106,7 @@ public class StepDefinitions {
         actionwords.iSwitchToSettingsMode();
     }
 
-    @Then("settings should be:")
+    @Then("settings should be: $datatable")
     public void settingsShouldBe(ExamplesTable datatable) {
         actionwords.settingsShouldBe(datatable);
     }
