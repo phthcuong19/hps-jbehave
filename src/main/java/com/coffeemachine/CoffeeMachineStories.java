@@ -12,10 +12,13 @@ import org.jbehave.core.junit.JUnitStories;
 import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
+import org.jbehave.core.reporters.SurefireReporter;
+import org.jbehave.core.reporters.SurefireReporter.Options;
 
 import static org.jbehave.core.io.CodeLocations.codeLocationFromClass;
 import static org.jbehave.core.reporters.Format.CONSOLE;
 import static org.jbehave.core.reporters.Format.HTML;
+import static org.jbehave.core.reporters.Format.XML;
 
 
 public class CoffeeMachineStories extends JUnitStories {
@@ -26,12 +29,13 @@ public class CoffeeMachineStories extends JUnitStories {
     @Override
     public Configuration configuration() {
         Class<? extends Embeddable> embeddableClass = this.getClass();
+        Options options = new Options("surefire-report", new CustomNamingStrategy(), false, false);
+        SurefireReporter surefireReporter = new SurefireReporter(embeddableClass, options);
+
         return new MostUsefulConfiguration().useStoryLoader(new LoadFromClasspath(embeddableClass))
                 .useStoryReporterBuilder(
                         new StoryReporterBuilder()
-                                .withCodeLocation(CodeLocations.codeLocationFromClass(embeddableClass))
-                                .withDefaultFormats().withFormats(CONSOLE, HTML).withFailureTrace(true)
-                                .withFailureTraceCompression(true));
+                                .withSurefireReporter(surefireReporter));
     }
 
     @Override
