@@ -18,7 +18,6 @@ Meta:
 Given the coffee machine is started
 When I shutdown the coffee machine
 Then message "" should be displayed
-
 Scenario: Messages are based on language
 Meta:
 @priority-1
@@ -26,10 +25,8 @@ Meta:
 When I start the coffee machine using language "<language>"
 Then message "<ready_message>" should be displayed
 
-
 Examples:
 | language | ready_message | hiptest-uid |
 | en | Ready |  |
 | fr | Pret |  |
-
 

@@ -18,12 +18,10 @@ Meta:
 @priority-0
 When I take "30" coffees
 Then message "Empty grounds" should be displayed
-
 Scenario: When the grounds are emptied, message is removed
 Meta:
 @priority-1
 When I take "30" coffees
 And I empty the coffee grounds
 Then message "Ready" should be displayed
-
 

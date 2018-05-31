@@ -23,7 +23,6 @@ Then displayed message is:
    - 1: water hardness
    - 2: grinder
   """
-
 Scenario: Default settings
 Meta:
 @priority-0
@@ -33,5 +32,4 @@ Then settings should be:
   | name | value |
   | water hardness | 2      |
   | grinder        | medium |
-
 
