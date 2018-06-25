@@ -94,20 +94,20 @@ public class CoffeeMachine {
 
     private String i18n(String key) {
         Map<String,String> map = new HashMap<String, String>();
-        if (lang.equals("fr")) {
-            map.put("tank", "Remplir reservoir");
-            map.put("beans", "Ajouter grains");
-            map.put("grounds", "Vider marc");
-            map.put("ready", "Pret");
-            map.put("settings", "Configurer:\n - 1: durete de l'eau\n - 2: mouture");
-            map.put("descale", "Detartage requis");
-        } else {
+        if (lang.equals("en")) {
             map.put("tank", "Fill tank");
             map.put("beans", "Fill beans");
             map.put("grounds", "Empty grounds");
             map.put("ready", "Ready");
             map.put("settings", "Settings:\n - 1: water hardness\n - 2: grinder");
             map.put("descale", "Descaling is needed");
+        } else {
+            map.put("tank", "Remplir reservoir");
+            map.put("beans", "Ajouter grains");
+            map.put("grounds", "Vider marc");
+            map.put("ready", "Pret");
+            map.put("settings", "Configurer:\n - 1: durete de l'eau\n - 2: mouture");
+            map.put("descale", "Detartage requis");
         }
         return map.get(key);
     }
