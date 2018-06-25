@@ -20,9 +20,10 @@ When I start the coffee machine using language "<language>"
 Then message "<ready_message>" should be displayed
 
 Examples:
-| language | ready_message | hiptest-uid |
-| en | Ready |  |
-| fr | Pret |  |
+|language|ready_message|hiptest-uid|
+|fr|Pret||
+|en|Ready||
+
 Scenario: No messages are displayed when machine is shut down
 Meta:
 @priority-medium
