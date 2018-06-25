@@ -20,7 +20,6 @@
       <plugin>
         <groupId>org.jbehave</groupId>
         <artifactId>jbehave-maven-plugin</artifactId>
-        <version>3.8</version>
         <executions>
           <execution>
             <id>unpack-view-resources</id>
