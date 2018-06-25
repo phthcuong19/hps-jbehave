@@ -112,7 +112,7 @@ public class CoffeeMachine {
             map.put("tank", "Them nuoc");
             map.put("beans", "Them ca phe");
             map.put("grounds", "Do ba ca phe");
-            map.put("ready", "San sang");
+            map.put("ready", "Dang chay");
             map.put("settings", "Cai dat:\n - 1: do cung nuoc\n - 2: may xay");
             map.put("descale", "Can rua maytat");
         }
