@@ -1,5 +1,5 @@
 # hps-jbehave
-[![Build Status](https://travis-ci.org/hiptest/hps-jbehave.svg?branch=master)](https://travis-ci.org/hiptest/hps-jbehave)
+[![Build Status](https://travis-ci.org/phthcuong19/hps-jbehave.svg?branch=master)](https://travis-ci.org/phthcuong19/hps-jbehave)
 
 Hiptest publisher samples with JBehave
 
@@ -37,4 +37,3 @@ To build the project and run the tests, use the following command:
 The SUT implementation can be seen in [``src/main/java/com/coffeemachine/CoffeeMachine.java``](https://github.com/hiptest/hps-jbehave/blob/master/src/main/java/com/coffeemachine/CoffeeMachine.java)
 
 The test report is generated in the ```target/jbehave/``` folder.
-
