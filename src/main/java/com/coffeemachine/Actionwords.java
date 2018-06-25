@@ -2,14 +2,9 @@ package com.coffeemachine;
 
 import java.util.Map;
 import java.util.HashMap;
-import java.util.List;
-
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertTrue;
-
 
 import org.jbehave.core.model.ExamplesTable;
+import org.junit.Assert;
 
 public class Actionwords {
     public CoffeeMachine sut = new CoffeeMachine();
@@ -31,15 +26,15 @@ public class Actionwords {
     }
 
     public void messageMessageShouldBeDisplayed(String message) {
-        assertEquals(message, sut.message());
+        Assert.assertEquals(message, sut.message());
     }
 
     public void coffeeShouldBeServed() {
-        assertTrue(sut.coffeeServed);
+        Assert.assertTrue(sut.coffeeServed);
     }
 
     public void coffeeShouldNotBeServed() {
-        assertFalse(sut.coffeeServed);
+        Assert.assertFalse(sut.coffeeServed);
     }
 
     public void iTakeACoffee() {
@@ -125,7 +120,7 @@ public class Actionwords {
     }
 
     public void displayedMessageIs(String freeText) {
-        assertEquals(sut.message().replaceAll("\\s+", " ").trim(), freeText.replaceAll("\\s+", " ").trim());
+        Assert.assertEquals(sut.message().replaceAll("\\s+", " ").trim(), freeText.replaceAll("\\s+", " ").trim());
     }
 
     public void iSwitchToSettingsMode() {
@@ -139,7 +134,7 @@ public class Actionwords {
            settings.put(row.get("name"), row.get("value"));
         }
 
-        assertEquals(settings, sut.getSettings());
+        Assert.assertEquals(settings, sut.getSettings());
     }
 
 }
