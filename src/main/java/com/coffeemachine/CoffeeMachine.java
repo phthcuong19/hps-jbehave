@@ -101,13 +101,20 @@ public class CoffeeMachine {
             map.put("ready", "Ready");
             map.put("settings", "Settings:\n - 1: water hardness\n - 2: grinder");
             map.put("descale", "Descaling is needed");
-        } else {
+        } else if (lang.equals("fr")) {
             map.put("tank", "Remplir reservoir");
             map.put("beans", "Ajouter grains");
             map.put("grounds", "Vider marc");
             map.put("ready", "Pret");
             map.put("settings", "Configurer:\n - 1: durete de l'eau\n - 2: mouture");
             map.put("descale", "Detartage requis");
+        } else {
+            map.put("tank", "Them nuoc");
+            map.put("beans", "Them ca phe");
+            map.put("grounds", "Do ba ca phe");
+            map.put("ready", "San sang");
+            map.put("settings", "Cai dat:\n - 1: do cung nuoc\n - 2: may xay");
+            map.put("descale", "Can rua maytat");
         }
         return map.get(key);
     }

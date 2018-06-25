@@ -23,6 +23,7 @@ Examples:
 | language | ready_message | hiptest-uid |
 | fr | Pret |  |
 | en | Ready |  |
+| vi | Dang chay |  |
 Scenario: No messages are displayed when machine is shut down
 Meta:
 @priority-medium
