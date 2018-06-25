@@ -2,9 +2,10 @@
 Can be configured
 
 Narrative:
-As this is a high quality product
-It is possible to configure it
-In order to get the best possible coffees
+**In order to** get the best possible coffees
+**As a** geeky coffee lover
+**I can** configure it to match my needs
+
 
 Lifecycle:
 Before:
@@ -14,7 +15,7 @@ Given actionwords are initialized
 
 Scenario: Display settings
 Meta:
-@priority-1
+@priority-medium
 Given the coffee machine is started
 When I switch to settings mode
 Then displayed message is:
@@ -25,7 +26,7 @@ Then displayed message is:
   """
 Scenario: Default settings
 Meta:
-@priority-0
+@priority-high
 Given the coffee machine is started
 When I switch to settings mode
 Then settings should be:

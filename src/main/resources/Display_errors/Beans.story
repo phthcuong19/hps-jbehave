@@ -15,12 +15,12 @@ And I handle everything except the beans
 
 Scenario: Message "Fill beans" is displayed after 38 coffees are taken
 Meta:
-@priority-0
+@priority-high
 When I take "38" coffees
 Then message "Fill beans" should be displayed
 Scenario: It is possible to take 40 coffees before there is really no more beans
 Meta:
-@priority-2
+@priority-low
 When I take "40" coffees
 Then coffee should be served
 When I take a coffee
@@ -28,7 +28,7 @@ Then coffee should not be served
 And message "Fill beans" should be displayed
 Scenario: After adding beans, the message "Fill beans" disappears
 Meta:
-@priority-0
+@priority-high
 When I take "40" coffees
 And I fill the beans tank
 Then message "Ready" should be displayed

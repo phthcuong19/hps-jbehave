@@ -15,19 +15,19 @@ And I handle everything except the water tank
 
 Scenario: Message "Fill water tank" is displayed after 50 coffees are taken
 Meta:
-@priority-0
+@priority-high
 When I take "50" coffees
 Then message "Fill tank" should be displayed
 Scenario: It is possible to take 10 coffees after the message "Fill water tank" is displayed
 Meta:
-@priority-2
+@priority-low
 When I take "60" coffees
 Then coffee should be served
 When I take a coffee
 Then coffee should not be served
 Scenario: When the water tank is filled, the message disappears
 Meta:
-@priority-0
+@priority-high
 When I take "55" coffees
 And I fill the water tank
 Then message "Ready" should be displayed
