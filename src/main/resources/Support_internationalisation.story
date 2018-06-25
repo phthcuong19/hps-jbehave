@@ -22,6 +22,7 @@ Then message "<ready_message>" should be displayed
 Examples:
 | language | ready_message | hiptest-uid |
 | fr | Pret |  |
+| en | Ready |  |
 Scenario: No messages are displayed when machine is shut down
 Meta:
 @priority-medium
