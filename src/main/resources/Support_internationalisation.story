@@ -21,8 +21,8 @@ Then message "<ready_message>" should be displayed
 
 Examples:
 | language | ready_message | hiptest-uid |
-| fr | Pret |  |
 | en | Ready |  |
+| fr | Pret |  |
 | vi | Dang chay |  |
 Scenario: No messages are displayed when machine is shut down
 Meta:
